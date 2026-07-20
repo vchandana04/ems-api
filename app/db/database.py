@@ -5,7 +5,7 @@ from sqlalchemy.orm import sessionmaker, declarative_base
 # Format: dialect+driver://username:password@host:port/database_name
 from app.core.config import DATABASE_URL
 # The engine manages the actual connection pool to the database
-engine = create_engine(DATABASE_URL, echo=True)
+engine = create_engine(DATABASE_URL, echo=False)  # Set echo=True for SQL query logging
 
 # SessionLocal is a factory that creates new database sessions on demand
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
